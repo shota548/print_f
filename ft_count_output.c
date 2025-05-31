@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_count_output.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 15:45:18 by showatan          #+#    #+#             */
-/*   Updated: 2025/05/31 13:27:52 by showatan         ###   ########.fr       */
+/*   Created: 2025/05/31 09:23:07 by showatan          #+#    #+#             */
+/*   Updated: 2025/05/31 11:00:47 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-
-int	ft_printf(const char	*input, ...)
+int	ft_count_output(const char	*input, va_list args)
 {
-	va_list		args;
-	int			num;
+	// size_t?だとしたら理由は？
+	int	count;
 
-	num = 0;
-	if (input == NULL)
-		return (0);
-	va_start(args, input);
-	num = ft_count_output(input, args);
-	va_end(args);
-	return (num);
+	count = 0;
+	//inputの途中にnull文字が入る場合は考える？
+	while (*input != '\0')
+	{
+		if (*input == '%')
+		{
+			input++;
+			count += ft_treat_something(*input, args);
+		}
+		else
+		{
+			ft_putstr_fd(*input, 1);
+			count++;
+		}
+		input++;
+	}
+	return (count);
 }

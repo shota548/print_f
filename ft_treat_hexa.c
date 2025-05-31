@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_treat_hexa.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 15:45:18 by showatan          #+#    #+#             */
-/*   Updated: 2025/05/31 13:27:52 by showatan         ###   ########.fr       */
+/*   Created: 2025/05/31 13:14:29 by showatan          #+#    #+#             */
+/*   Updated: 2025/05/31 15:13:55 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "print_f.h"
 
-
-int	ft_printf(const char	*input, ...)
+int	ft_treat_hexa(unsigned int nbr, int lower_flag)
 {
-	va_list		args;
-	int			num;
+	int		count;
+	char	hex;
 
-	num = 0;
-	if (input == NULL)
-		return (0);
-	va_start(args, input);
-	num = ft_count_output(input, args);
-	va_end(args);
-	return (num);
+	count = 0;
+	hex = ft_change_base((unsigned long long)nbr, 16);
+	if (lower_flag == 1)
+		hex = ft_tolower_all(hex);
+	count += ft_putstr_count(hex);
+	free(hex);
+	return (count);
 }

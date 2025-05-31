@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_treat_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 15:45:18 by showatan          #+#    #+#             */
-/*   Updated: 2025/05/31 13:27:52 by showatan         ###   ########.fr       */
+/*   Created: 2025/05/31 10:49:58 by showatan          #+#    #+#             */
+/*   Updated: 2025/05/31 11:00:09 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "print_f.h"
 
-
-int	ft_printf(const char	*input, ...)
+int	ft_treat_string(char *str)
 {
-	va_list		args;
-	int			num;
+	int count;
 
-	num = 0;
-	if (input == NULL)
-		return (0);
-	va_start(args, input);
-	num = ft_count_output(input, args);
-	va_end(args);
-	return (num);
+	if (str == NULL)
+		str == "(null)";
+	count = ft_strlen(str);
+	ft_putstr_fd(str, 1);
+	return (count);
 }

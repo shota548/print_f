@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_count.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 15:45:18 by showatan          #+#    #+#             */
-/*   Updated: 2025/05/31 13:27:52 by showatan         ###   ########.fr       */
+/*   Created: 2025/05/31 15:14:26 by showatan          #+#    #+#             */
+/*   Updated: 2025/05/31 15:19:30 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "print_f.h"
 
-
-int	ft_printf(const char	*input, ...)
+int	ft_putstr_count(char *str)
 {
-	va_list		args;
-	int			num;
+	int	count;
 
-	num = 0;
-	if (input == NULL)
-		return (0);
-	va_start(args, input);
-	num = ft_count_output(input, args);
-	va_end(args);
-	return (num);
+	while (*str != '\0')
+	{
+		ft_putstr_fd(str, 1);
+		count++;
+	}
+	return (count);
 }

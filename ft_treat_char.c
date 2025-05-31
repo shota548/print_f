@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_treat_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 15:45:18 by showatan          #+#    #+#             */
-/*   Updated: 2025/05/31 13:27:52 by showatan         ###   ########.fr       */
+/*   Created: 2025/05/31 10:48:23 by showatan          #+#    #+#             */
+/*   Updated: 2025/05/31 10:59:44 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-
-int	ft_printf(const char	*input, ...)
+int ft_treat_char(char c)
 {
-	va_list		args;
-	int			num;
-
-	num = 0;
-	if (input == NULL)
-		return (0);
-	va_start(args, input);
-	num = ft_count_output(input, args);
-	va_end(args);
-	return (num);
+	ft_putchar_fd(c, 1);
+	return (1);
 }
