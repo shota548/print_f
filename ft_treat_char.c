@@ -6,11 +6,11 @@
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 10:48:23 by showatan          #+#    #+#             */
-/*   Updated: 2025/05/31 10:59:44 by showatan         ###   ########.fr       */
+/*   Updated: 2025/06/01 17:15:22 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int ft_treat_char(char c)
 {

@@ -6,11 +6,11 @@
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 09:57:15 by showatan          #+#    #+#             */
-/*   Updated: 2025/05/31 14:35:11 by showatan         ###   ########.fr       */
+/*   Updated: 2025/06/01 17:14:29 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int ft_treat_something(const char	*input, va_list args)
 {
@@ -18,20 +18,20 @@ int ft_treat_something(const char	*input, va_list args)
 
 	count = 0;
 	if (*input == 'c')
-		count += ft_treat_char(args);
+		count += ft_treat_char(va_arg(args, int));
 	if (*input == 's')
-		count += ft_treat_string(args);
+		count += ft_treat_string(va_arg(args, char *));
 	if (*input == 'p')
-		count += ft_treat_point(args);
+		count += ft_treat_point(va_arg(args, unsigned long long));
 	if (*input == 'd' || *input == 'i')
-		count += ft_treat_int(args);
+		count += ft_treat_int(va_arg(args, int));
 	if (*input == 'u')
-		count += ft_treat_unsigned(args);
+		count += ft_treat_unsigned(va_arg(args, unsigned int));
 	if (*input == 'x')
-		count += ft_treat_hexa(args);
+		count += ft_treat_hexa(va_arg(args, unsigned int), 1);
 	if (*input == 'X')
-		count += ft_treat_hexa(args);
+		count += ft_treat_hexa(va_arg(args, unsigned int), 0);
 	if (*input == '%')
-		count += ft_putstr_count('%');
+		count += ft_putstr_count("%");
 	return (count);
 }

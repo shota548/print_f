@@ -6,11 +6,11 @@
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 09:23:07 by showatan          #+#    #+#             */
-/*   Updated: 2025/05/31 11:00:47 by showatan         ###   ########.fr       */
+/*   Updated: 2025/06/01 19:18:46 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_count_output(const char	*input, va_list args)
 {
@@ -24,11 +24,11 @@ int	ft_count_output(const char	*input, va_list args)
 		if (*input == '%')
 		{
 			input++;
-			count += ft_treat_something(*input, args);
+			count += ft_treat_something(input, args);
 		}
 		else
 		{
-			ft_putstr_fd(*input, 1);
+			ft_putchar_fd(*input, 1);
 			count++;
 		}
 		input++;

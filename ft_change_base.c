@@ -6,11 +6,11 @@
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 11:25:38 by showatan          #+#    #+#             */
-/*   Updated: 2025/05/31 15:09:33 by showatan         ###   ########.fr       */
+/*   Updated: 2025/06/01 17:14:29 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static char	*ft_devide_by_base(unsigned long long src_nbr, int base, char *dst_nbr, int count_digit)
 {
@@ -33,7 +33,7 @@ char	*ft_change_base(unsigned long long src_nbr, int base)
 
 	count_digit = 0;
 	if (src_nbr == 0)
-		return (ft_strdup('0'));
+		return (ft_strdup("0"));
 	while (src_nbr != 0)
 	{
 		src_nbr /= base;
@@ -42,7 +42,7 @@ char	*ft_change_base(unsigned long long src_nbr, int base)
 	dst_nbr = ft_calloc(count_digit + 1, sizeof(char));
 	if (dst_nbr == NULL)
 		return (NULL);
-	dst_nbr = change_base(src_nbr, base, dst_nbr, count_digit);
+	dst_nbr = ft_devide_by_base(src_nbr, base, dst_nbr, count_digit);
 	return (dst_nbr);
 
 }

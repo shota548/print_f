@@ -6,11 +6,11 @@
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 15:45:18 by showatan          #+#    #+#             */
-/*   Updated: 2025/05/31 13:27:52 by showatan         ###   ########.fr       */
+/*   Updated: 2025/06/01 17:15:33 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 
 int	ft_printf(const char	*input, ...)

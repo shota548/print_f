@@ -6,7 +6,7 @@
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 09:58:02 by showatan          #+#    #+#             */
-/*   Updated: 2025/05/31 15:27:20 by showatan         ###   ########.fr       */
+/*   Updated: 2025/06/01 16:03:18 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stddef.h>
+#include "./libft/libft.h"
 
 char	*ft_change_base(unsigned long long src_nbr, int base);
 int		ft_count_output(const char	*input, va_list args);
