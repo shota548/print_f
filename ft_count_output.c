@@ -6,7 +6,7 @@
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 09:23:07 by showatan          #+#    #+#             */
-/*   Updated: 2025/06/01 19:18:46 by showatan         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:26:06 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int	ft_count_output(const char	*input, va_list args)
 {
-	// size_t?だとしたら理由は？
 	int	count;
 
 	count = 0;
-	//inputの途中にnull文字が入る場合は考える？
 	while (*input != '\0')
 	{
 		if (*input == '%')

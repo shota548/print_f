@@ -6,13 +6,13 @@
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 09:57:15 by showatan          #+#    #+#             */
-/*   Updated: 2025/06/01 17:14:29 by showatan         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:26:35 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_treat_something(const char	*input, va_list args)
+int	ft_treat_something(const char	*input, va_list args)
 {
 	int	count;
 
@@ -22,7 +22,7 @@ int ft_treat_something(const char	*input, va_list args)
 	if (*input == 's')
 		count += ft_treat_string(va_arg(args, char *));
 	if (*input == 'p')
-		count += ft_treat_point(va_arg(args, unsigned long long));
+		count += ft_treat_point(va_arg(args, void *));
 	if (*input == 'd' || *input == 'i')
 		count += ft_treat_int(va_arg(args, int));
 	if (*input == 'u')

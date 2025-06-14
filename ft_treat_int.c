@@ -6,13 +6,13 @@
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 13:14:46 by showatan          #+#    #+#             */
-/*   Updated: 2025/06/01 17:15:48 by showatan         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:27:09 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_treat_int(int nbr)
+int	ft_treat_int(int nbr)
 {
 	char	*str;
 	int		count;

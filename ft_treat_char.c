@@ -6,13 +6,13 @@
 /*   By: showatan <showatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 10:48:23 by showatan          #+#    #+#             */
-/*   Updated: 2025/06/01 17:15:22 by showatan         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:26:51 by showatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_treat_char(char c)
+int	ft_treat_char(char c)
 {
 	ft_putchar_fd(c, 1);
 	return (1);
